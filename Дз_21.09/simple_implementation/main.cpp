@@ -1,6 +1,5 @@
 #include <iostream>
 
-void swap(int *a, int *b);
 void my_sort(int *arr, const int size);
 
 int main() {
@@ -21,16 +20,14 @@ int main() {
     delete[] arr;
     return 0;
 }
-void swap(int *a, int *b){
-    int temp = *a;
-    *a = *b;
-    *b = temp;
-}
+
 void my_sort(int *arr, const int size) {
     for (int i = 0;i < size - 1; i++) {
         for (int j = 0; j < size - 1 - i; j++) {
             if (arr[j] > arr[j + 1]) {
-                swap(&arr[j], &arr[j + 1]);
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
             }
         }
     }
