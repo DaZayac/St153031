@@ -23,12 +23,10 @@ const VZai::MenuItem* VZai::show_menu(const MenuItem* curr) {
     }
 }
 
-// Завершение программы
 const VZai::MenuItem* VZai::exit(const MenuItem* curr) {
     return nullptr;
 }
 
-// curr - пункт "Назад"; его parent - текущее меню; parent меню - предыдущее
 const VZai::MenuItem* VZai::go_back(const MenuItem* curr) {
     if (curr->parent != nullptr && curr->parent->parent != nullptr) {
         return curr->parent->parent;
@@ -36,7 +34,6 @@ const VZai::MenuItem* VZai::go_back(const MenuItem* curr) {
     return curr->parent;
 }
 
-// Подменю авторов: просто заходим в него
 const VZai::MenuItem* VZai::lermontov(const MenuItem* curr) {
     return curr;
 }
@@ -45,7 +42,6 @@ const VZai::MenuItem* VZai::krylov(const MenuItem* curr) {
     return curr;
 }
 
-// Произведения: выводим текст и возвращаемся в меню
 const VZai::MenuItem* VZai::dubrovsky(const MenuItem* curr) {
     std::cout << "Дубровский: ..." << std::endl;
     return curr->parent;
